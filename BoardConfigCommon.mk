@@ -43,6 +43,9 @@ AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 BOARD_USES_LEGACY_MMAP := true
 
+# Font
+EXTENDED_FONT_FOOTPRINT := true
+
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -85,6 +88,9 @@ BOARD_SEPOLICY_UNION += \
     wpa.te \
     file_contexts \
     genfs_contexts
+
+# Text rendering
+USE_MINIKIN := true
 
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
