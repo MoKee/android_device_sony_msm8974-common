@@ -21,12 +21,17 @@ COMMON_PATH := device/sony/msm8974-common
 PRODUCT_PACKAGES += \
     CameraWorkaround
 
+# Ion
+PRODUCT_PACKAGES += \
+    libion
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8974
 
 # Media profile
 PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
@@ -39,6 +44,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
 
-# Ion
-PRODUCT_PACKAGES += \
-    libion
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
+ifneq ($(BOARD_HAVE_RADIO),false)
+    DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-radio
+    $(call inherit-product, $(COMMON_PATH)/radio.mk)
+endif
