@@ -41,6 +41,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     CameraWorkaround
 
+PRODUCT_PACKAGES += \
+    libcutilz
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
 # Display
 PRODUCT_PACKAGES += \
     hwcomposer.msm8974 \

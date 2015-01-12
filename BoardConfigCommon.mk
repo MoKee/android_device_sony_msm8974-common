@@ -34,6 +34,9 @@ TARGET_BOARD_PLATFORM := msm8974
 # Architecture
 TARGET_CPU_VARIANT := krait
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_DISABLED_USBAUDIO := true
@@ -82,7 +85,10 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     location.te \
     mac-update.te \
+    mediaserver.te \
+    mm-qcamerad.te \
     mpdecision.te \
+    property.te \
     radio.te \
     rild.te \
     sct.te \
@@ -96,7 +102,8 @@ BOARD_SEPOLICY_UNION += \
     time_daemon.te \
     wpa.te \
     file_contexts \
-    genfs_contexts
+    genfs_contexts \
+    property_contexts
 
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
