@@ -45,6 +45,9 @@ AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
 # Bionic
 BOARD_USES_LEGACY_MMAP := true
 
+# CM Hardware
+BOARD_HARDWARE_CLASS += device/sony/msm8974-common/mkhw
+
 # Font
 EXTENDED_FONT_FOOTPRINT := true
 
@@ -66,6 +69,9 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8974-common/boot/custombootimg.mk
+
+# Lights HAL
+TARGET_PROVIDES_LIBLIGHT := true
 
 # Logd
 TARGET_USES_LOGD := false
