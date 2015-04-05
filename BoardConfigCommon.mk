@@ -49,8 +49,8 @@ BOARD_HAVE_BLUETOOTH := true
 # Camera
 TARGET_PROVIDES_CAMERA_HAL := true
 
-# CM Hardware
-BOARD_HARDWARE_CLASS += device/sony/msm8974-common/cmhw
+# MK Hardware
+BOARD_HARDWARE_CLASS += device/sony/msm8974-common/mkhw
 
 # Font
 EXTENDED_FONT_FOOTPRINT := true
