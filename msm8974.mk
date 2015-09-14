@@ -108,6 +108,7 @@ PRODUCT_PACKAGES += \
 
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.perf.cores_online=2 \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 # Recovery
@@ -137,6 +138,10 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# QCOM Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.hwc.mdpcomp.enable=true
 
 # OpenGL ES 3.0
 PRODUCT_PROPERTY_OVERRIDES += \
