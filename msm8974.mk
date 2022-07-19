@@ -20,7 +20,7 @@ include $(PLATFORM_PATH)/system_prop.mk
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay \
-    $(PLATFORM_PATH)/overlay-lineage
+    $(PLATFORM_PATH)/overlay-mokee
 
 ifneq ($(BOARD_HAVE_RADIO),false)
     $(call inherit-product, $(PLATFORM_PATH)/radio.mk)
@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sysfs
+    vendor.mokee.livedisplay@2.0-service-sysfs
 
 # Media profile
 PRODUCT_COPY_FILES += \
@@ -211,7 +211,7 @@ PRODUCT_PACKAGES += \
 
 # Trust HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+    vendor.mokee.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
